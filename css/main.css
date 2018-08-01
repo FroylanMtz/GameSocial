@@ -1,28 +1,63 @@
-html {
-    position: relative;
-    min-height: 100%;
-}
 
-body {
-    /* Margin bottom by footer height */
-    margin-bottom: 60px;
-    /*background: linear-gradient(to right, #4CA1AF, #2C3E50);*/
-}
+html, body {
+    height: 100%;
+    margin: 0;
 
+
+    
+    background: linear-gradient(to right, #1565C0, #b92b27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    
+}
 
 .navbar{
 
-    background-color: #607ee0;
+    background-color: #1565C0;
+}
 
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+.header {
+    background: #607ee0;
 }
 
 .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    height: 60px;
-    background-color: #607ee0;
     text-align: center;
+    background: #1565C0;
 }
-  
+
+.content{
+    flex: 1;
+    overflow: auto;
+    height: 10000px;
+
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#lbl_nickname{
+    font-weight: bold;
+}
+
+#lbl_password{
+    font-weight: bold;
+}
+
+#info{
+
+    font-family: 'Fredoka One', cursive;
+    text-align: center;
+
+}
+
+#cabecera_info{
+
+    font-family: 'Fredoka One', cursive;
+    text-align: center;
+
+}
