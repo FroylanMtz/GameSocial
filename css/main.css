@@ -1,0 +1,28 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    /*background: linear-gradient(to right, #4CA1AF, #2C3E50);*/
+}
+
+
+.navbar{
+
+    background-color: #607ee0;
+
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #607ee0;
+    text-align: center;
+}
+  
