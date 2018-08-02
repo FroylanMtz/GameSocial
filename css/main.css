@@ -4,7 +4,7 @@ html, body {
     margin: 0;
 
 
-    background: linear-gradient(to right, #4e54c8, #8f94fb);
+    background:  #f2f2f2;
 }
 
 .navbar{
@@ -28,14 +28,43 @@ html, body {
     background: #1565C0;
 }
 
+/* //////CONETENIDOS POR PAGINA //////////// */
 .content{
     flex: 1;
     overflow: auto;
-    height: 10000px;
+
 
     padding-left: 10%;
     padding-right: 10%;
+
+    background-color: #f2f2f2;
 }
+
+.content_index{
+
+    flex: 2;
+    overflow: auto;
+
+
+    padding-left: 30%;
+    padding-right: 30%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: #f2f2f2;
+
+}
+
+.datos_usuario{
+
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+
+}
+/* ////////////////////////////////////////////// */
 
 #lbl_nickname{
     font-weight: bold;
@@ -57,6 +86,16 @@ html, body {
     font-family: 'Fredoka One', cursive;
     text-align: center;
 
+}
+
+#foto_notificacion{
+
+    border-radius: 80px;
+
+}
+
+#tarjeta_notificacion{
+    text-align: center;
 }
 
 /*////////////////// NAV BAR 1 /////////////////////////////////////// */
@@ -122,4 +161,8 @@ html, body {
     color: white;
     border-bottom-right-radius : 20px;
     border-top-left-radius: 20px;
+}
+
+.topnav2 h3{
+    color: #f2f2f2;
 }
