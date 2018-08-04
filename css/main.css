@@ -41,19 +41,13 @@ html, body {
 }
 
 .content_index{
-
     flex: 2;
     overflow: auto;
-
-
     padding-left: 30%;
     padding-right: 30%;
-
     margin-left: auto;
     margin-right: auto;
-
     background-color: #f2f2f2;
-
 }
 
 .datos_usuario{
