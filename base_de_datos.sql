@@ -1,6 +1,6 @@
-create database twitgame;
+create database twigame;
 
-use twitgame;
+use twigame;
 
 
 create table usuarios(
@@ -10,7 +10,7 @@ create table usuarios(
     username varchar(50) not null,
     password varchar(50) not null,
     correo varchar(50) not null,
-    fecha_nacimiento date not null,
+    edad int not null,
 
     primary key(id)
 );

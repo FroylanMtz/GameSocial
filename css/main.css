@@ -58,14 +58,16 @@ html, body {
     text-align: center;
 
 }
+
+
 /* ////////////////////////////////////////////// */
 
-#lbl_nickname{
-    font-weight: bold;
+#boton_inicio{
+    text-align: center;
 }
 
-#lbl_password{
-    font-weight: bold;
+#boton_registro{
+    text-align: center;
 }
 
 #info{
