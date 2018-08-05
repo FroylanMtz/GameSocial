@@ -8,7 +8,7 @@
     include '../db.php';
 
     header('Content-Type: application/json');
-    $jsonResp = array('ultimoid' => 0, 'mensaje' => 'Usuario registrado correctamente', 'error' => false);
+    $jsonResp = array( 'error' => false, 'mensaje' => '');
 
     $usuario = filter_input(INPUT_POST, 'usuario');
     $contrasena = filter_input(INPUT_POST, 'contrasena');
@@ -31,13 +31,18 @@
             $_SESSION['usuario_username'] = $r['username'];
             $_SESSION['usuario_correo'] = $r['correo'];
             $_SESSION['usuario_edad'] = $r['edad'];
-            header('Location: /GameSocial');
-            exit();
+            $jsonResp['mensaje'] = 'session iniciada';
+        
+
+
         }else{
             $jsonResp['error'] = true;
-            $jsonResp['mensaje'] = 'contrasena incorrecta';
+            $jsonResp['mensaje'] = 'Contrasena Incorrecta';
         }
 
+    }else{
+        $jsonResp['error'] = true;
+        $jsonResp['mensaje'] = 'El nickname que ingresaste no coincide con ninguna cuenta';
     }
 
     echo json_encode($jsonResp);

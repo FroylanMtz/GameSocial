@@ -12,6 +12,7 @@ var $btnIniciarSesion = $('#btnIniciarSesion');
 var $btnRegistrarUsuario = $('#btnRegistrarUsuario');
 
 var $errorRegistro = $('#errorRegistro');
+var $errorInicio = $('#errorInicio');
 
 function btnRegistrarUsuario_click(e){
 
@@ -95,8 +96,6 @@ function btnRegistrarUsuario_click(e){
 
 function btnIniciarSesion_click(e){
 
-    alert('se pucho inisiar sesion');
-
     if($txtUsuarioInicio === '' || $txtContrasenaInicio === ''){
 
         if($txtUsuarioInicio === ''){
@@ -113,9 +112,14 @@ function btnIniciarSesion_click(e){
         $.post('ajax/iniciar.php',params,function(data){
             
             if(!data.error){
-                alert(data.mensaje);
+                $errorInicio.text(data.mensaje);
+
+                if(data.mensaje === 'session iniciada'){
+                    location.href = "../../GameSocial";
+                }
+
             }else{
-                console.log(data.mensaje);
+                $errorInicio.text(data.mensaje);
             }
 
         });
