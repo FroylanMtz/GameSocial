@@ -62,14 +62,12 @@ function btnRegistrarUsuario_click(e){
 
         alert('Datos validos');
 
-        var params = {nombre: $txtNombre.val(),
-            apellidos: $txtApellidos.val(),
-            correo:$txtCorreo.val(),
-            usuario: $txtUsuario.val(),
-            contrasena: $txtContrasena.val() };
+        var params = {nombre: $txtNombre.val(),apellidos: $txtApellidos.val(),correo:$txtCorreo.val(),usuario: $txtUsuario.val(),contrasena: $txtContrasena.val() };
 
-        $.post('../ajax/registro.php', params, function (data){
-            
+        console.log('Antes de entrar al post ajax');
+
+        $.post('ajax/registro.php', params, function(data){
+            console.log('llamada completada');
             if(!data.error){
                 $txtNombre.val('');
                 $txtApellidos.val('');
@@ -77,13 +75,17 @@ function btnRegistrarUsuario_click(e){
                 $txtUsuario.val('');
                 $txtContrasena.val('');
                 $txtRepetirContrasena.val('');
+                alert('Registro realizado correctamente');
             }else{
                 console.log('Error: ' + data.error);
             }
 
-            alert('Registro realizado correctamente');
-
+            
+            console.log('Despues de entrar al post ajax');
         });
+
+
+        
         
 
     }

@@ -9,6 +9,8 @@
     //Assoc array que va a representar la respuesta JSON
     $jsonResp = array('id' => 0, 'mensaje' => NULL, 'error' => NULL);
 
+    echo json_encode($jsonResp);
+    
     $nombre = filter_input(INPUT_POST, 'nombre');
     $apellidos = filter_input(INPUT_POST, 'apellidos');
     $correo = filter_input(INPUT_POST, 'correo');
