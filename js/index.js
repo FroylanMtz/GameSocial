@@ -11,19 +11,22 @@ var $txtRepetirContrasena = $('#txtContrasenaReRegistro');
 var $btnIniciarSesion = $('#btnIniciarSesion');
 var $btnRegistrarUsuario = $('#btnRegistrarUsuario');
 
+var $errorRegistro = $('#errorRegistro');
+
 function btnRegistrarUsuario_click(e){
+
 
     if($txtContrasena.val() !== $txtRepetirContrasena.val() ||
         $txtNombre.val() === '' || $txtApellidos.val() === '' ||
         $txtCorreo.val() === '' || $txtUsuario.val() === '' ||
         $txtContrasena.val() === ''){
 
-        $txtNombre.css('border-color', 'gray');
-        $txtApellidos.css('border-color', 'gray');
-        $txtCorreo.css('border-color', 'gray');
-        $txtUsuario.css('border-color', 'gray');
-        $txtContrasena.css('border-color', 'gray');
-        $txtRepetirContrasena.css('border-color', 'gray');
+        $txtNombre.css('border-color', '#e2e0e2');
+        $txtApellidos.css('border-color', '#e2e0e2');
+        $txtCorreo.css('border-color', '#e2e0e2');
+        $txtUsuario.css('border-color', '#e2e0e2');
+        $txtContrasena.css('border-color', '#e2e0e2');
+        $txtRepetirContrasena.css('border-color', '#e2e0e2');
         
         if($txtContrasena.val() !== $txtRepetirContrasena.val()){
             $txtContrasena.css('border-color', 'red');
@@ -54,46 +57,70 @@ function btnRegistrarUsuario_click(e){
             $txtRepetirContrasena.css('border-color', 'red');
         }
 
-        alert('Datos invalidos');
 
     }else{
 
-        alert('Datos validos');
-
         var params = {nombre: $txtNombre.val(),apellidos: $txtApellidos.val(),correo:$txtCorreo.val(),usuario: $txtUsuario.val(),contrasena: $txtContrasena.val() };
 
-        console.log('Antes de entrar al post ajax');
-
         $.post('ajax/registro.php',params,function(data){
-            console.log('llamada completada');
+            
             if(!data.error){
+                console.log(data);
                 $txtNombre.val('');
                 $txtApellidos.val('');
                 $txtCorreo.val('');
                 $txtUsuario.val('');
                 $txtContrasena.val('');
                 $txtRepetirContrasena.val('');
-                alert('Registro realizado correctamente');
+                alert('Usuario registrado correctamente');
+                $txtUsuario.css('border-color', '#e2e0e2');
+                $txtCorreo.css('border-color', '#e2e0e2');
+                $errorRegistro.text('');
             }else{
-                console.log('Error: ' + data.error);
+                if(data.mensaje === 'correo'){
+                    $txtCorreo.css('border-color', 'red');
+                    $txtUsuario.css('border-color', '#e2e0e2');
+                    $errorRegistro.text('Ya existe un usuario con ese correo, elige otro' );
+                }else{
+                    $txtUsuario.css('border-color', 'red');
+                    $txtCorreo.css('border-color', '#e2e0e2');
+                    $errorRegistro.text('Ya existe un usuario con ese nickname, elige otro');
+                }
             }
-
-            
-            console.log('Despues de entrar al post ajax');
         });
-
-
-        
-        
-
     }
     
-    //alert('Algo')
 
 }
 
 function btnIniciarSesion_click(e){
 
+    alert('se pucho inisiar sesion');
+
+    if($txtUsuarioInicio === '' || $txtContrasenaInicio === ''){
+
+        if($txtUsuarioInicio === ''){
+            $txtUsuarioInicio.css('border-color', 'red');
+            $txtContrasenaInicio.css('border-color', '#e2e0e2');
+        }else{
+            $txtContrasenaInicio.css('border-color', 'red');
+            $txtUsuarioInicio.css('border-color', '#e2e0e2');
+        }
+
+    }else{
+        var params = {usuario: $txtUsuarioInicio.val(), contrasena: $txtContrasenaInicio.val()};
+
+        $.post('ajax/iniciar.php',params,function(data){
+            
+            if(!data.error){
+                alert(data.mensaje);
+            }else{
+                console.log(data.mensaje);
+            }
+
+        });
+
+    }
 
 
 }

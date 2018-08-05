@@ -1,3 +1,12 @@
+<?php
+
+    include 'config.php';
+    include 'db.php';
+    include 'session.php';
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
