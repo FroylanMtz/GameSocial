@@ -11,8 +11,6 @@ var $txtRepetirContrasena = $('#txtContrasenaReRegistro');
 var $btnIniciarSesion = $('#btnIniciarSesion');
 var $btnRegistrarUsuario = $('#btnRegistrarUsuario');
 
-var textocon = document.getElementById("txtContrasenaRegistro");
-
 function btnRegistrarUsuario_click(e){
 
     if($txtContrasena.val() !== $txtRepetirContrasena.val() ||
@@ -66,7 +64,7 @@ function btnRegistrarUsuario_click(e){
 
         console.log('Antes de entrar al post ajax');
 
-        $.post('ajax/registro.php', params, function(data){
+        $.post('ajax/registro.php',params,function(data){
             console.log('llamada completada');
             if(!data.error){
                 $txtNombre.val('');

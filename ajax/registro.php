@@ -10,7 +10,7 @@
     $jsonResp = array('id' => 0, 'mensaje' => NULL, 'error' => NULL);
 
     echo json_encode($jsonResp);
-    
+
     $nombre = filter_input(INPUT_POST, 'nombre');
     $apellidos = filter_input(INPUT_POST, 'apellidos');
     $correo = filter_input(INPUT_POST, 'correo');
@@ -19,7 +19,7 @@
 
     $db = getPDO();
 
-    $stmt = $db->prepare('INSERT INTO usuarios(nombre, apellidos, usuario, contrasena, correo, edad)');
+    $stmt = $db->prepare('INSERT INTO usuarios(nombre, apellidos, username, password, correo, edad) VALUES (:nombre, :apellidos, :usuario, :contrasena, :correo, :edad)');
 
     $stmt->bindParam(':nombre', $nombre);
     $stmt->bindParam(':apellidos', $apellidos);
