@@ -17,9 +17,10 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
 
 </head>
-<body>
+<body >
 
 
     <div class="wrapper">
@@ -31,7 +32,7 @@
                 <a class="navbar-brand" href="index.html"> <img src="img/twigame.png" width="150" height="40"> </a>
 
                 <div class="topnav">
-                    <a class="active" href="index.html"> <i class="fas fa-home"></i> Inicio</a>
+                    <a class="active" href="index.php"> <i class="fas fa-home"></i> Inicio</a>
                     <a href="cuenta.html"> <i class="fas fa-user"></i> Cuenta</a>
                     <a href="config.html"> <i class="fas fa-cogs"></i> Configuracion</a>
                     <a href="login.html"> <i class="fas fa-sign-out-alt"></i> Salir</a>
@@ -40,41 +41,22 @@
             </nav>
 
             <div class="topnav2">
-                <a href="#"> <i class="far fa-newspaper"></i> News </a>
-                <a class="active" href="#" id="id_juegos_index"> <i class="fas fa-gamepad"></i> Juegos </a>
-                <a href="#"> <i class="fas fa-bell"></i> Notificaciones </a>
+                <a href="#" id="cargarNoticias"> <i class="far fa-newspaper"></i> News </a>
+                <a href="#" id="cargarJuegos"> <i class="fas fa-gamepad"></i> Juegos </a>
+                <a href="#" id="cargarNotificaciones"> <i class="fas fa-bell"></i> Notificaciones </a>
             </div>
+            
 
         </div>
 
 
         
         
-        <div class="content_index">
+        <div class="content_index" id="content_index">
 
-            <div class="row">
-
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-body">
-
-                            <h1> Buscaminas </h1>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-
-                            <h1> Conecta 4 </h1>
-
-                        </div>
-                    </div>
-                </div>
             
-            <div>
+
+           
         </div>
 
 
@@ -89,9 +71,8 @@
     </div>
     
 
-
-    <script src="/js/index.js" charset="utf-8"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/inicio.js" charset="utf-8"></script>
 
 </body>
 </html>

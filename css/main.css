@@ -38,17 +38,18 @@ html, body {
     padding-left: 10%;
     padding-right: 10%;
 
-    background-color: #f2f2f2;
+    background-color: rgba(1,1, 1, 0);
 }
 
 .content_index{
     flex: 2;
-    overflow: auto;
-    padding-left: 30%;
-    padding-right: 30%;
+    /*overflow: auto;*/
+    /*padding-left: 10%;
+    padding-right: 10%;*/
     margin-left: auto;
     margin-right: auto;
-    background-color: #f2f2f2;
+
+    background-color: rgba(1,1, 1, 0);
 }
 
 .datos_usuario{
@@ -156,10 +157,22 @@ html, body {
 .topnav2 a.active {
     background-color: rgb(73, 132, 199);
     color: white;
-    border-bottom-right-radius : 20px;
-    border-top-left-radius: 20px;
+
 }
 
 .topnav2 h3{
     color: #f2f2f2;
 }
+
+
+/* ///////////////////////////ICONOS DE LA TARJERA DE JUEGOS */
+
+/*#juegoBuscaminas a {
+    font-family: 'Gloria Hallelujah', cursive;
+    float: left;
+    color: #1565C0;
+    text-align: center;
+    padding: 3px 30px;
+    text-decoration: none;
+    font-size: 40px;
+}*/
