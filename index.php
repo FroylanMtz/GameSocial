@@ -14,10 +14,12 @@
     <title>GameSocial</title>
 
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="juegos/Buscaminas/css/style.css">
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    
 
 </head>
 <body >
@@ -73,6 +75,7 @@
 
     <script src="js/jquery.js"></script>
     <script src="js/inicio.js" charset="utf-8"></script>
+    
 
 </body>
 </html>

@@ -1,0 +1,77 @@
+body {
+	font-family: 'Jua', Helvetica, sans-serif;
+	background-color: lightgrey;
+}
+
+h1 {
+	color: white;
+	text-align: center;
+}
+
+#contenedor {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #00c7ff;
+}
+
+table{
+	margin: 0 auto;
+}
+
+#btnAsignarTablero{
+	font-family: 'Jua';
+	text-decoration: none;
+	border-radius: 16px;
+    padding: 5px;
+}
+
+#btnAsignarTablero:hover{
+    color: #1883ba;
+    background-color: #ffffff;
+}
+
+#txtCantFilas{
+	font-family: 'Jua';
+	border-radius: 16px;
+	padding: 5px;
+	text-align: center;
+}
+
+#txtCantCol{
+	font-family: 'Jua';
+	border-radius: 16px;
+	padding: 5px;
+	text-align: center;
+}
+
+#txtCantMinas{
+	font-family: 'Jua';
+	border-radius: 16px;
+	padding: 5px;
+	text-align: center;
+}
+
+label{
+	font-size: 20px;
+}
+	
+#rejillaJuego td input{
+	font-family: 'Jua';
+	font-size: 20px;
+	background-color: #999595;
+	border-radius: 5px;
+	width: 50px;
+	height: 50px;
+}
+
+#rejillaJuego td input:disabled{
+	background-color: #f2eded;
+	
+}
+
+#minaEncontrada {
+	font-size: 50px;
+	color: red;
+}
+

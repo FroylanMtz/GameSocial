@@ -31,23 +31,20 @@ html, body {
 
 /* //////CONETENIDOS POR PAGINA //////////// */
 .content{
-    flex: 1;
-    overflow: auto;
-
-
+    flex: 2;
+    /*overflow: auto;*/
     padding-left: 10%;
     padding-right: 10%;
-
     background-color: rgba(1,1, 1, 0);
 }
 
 .content_index{
     flex: 2;
     /*overflow: auto;*/
-    /*padding-left: 10%;
-    padding-right: 10%;*/
-    margin-left: auto;
-    margin-right: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    /*margin-left: auto;
+    margin-right: auto;*/
 
     background-color: rgba(1,1, 1, 0);
 }
@@ -132,7 +129,7 @@ html, body {
     background-color: rgb(23, 92, 172);
     overflow: hidden;
 
-     display: flex;
+    display: flex;
     justify-content: center;
 }
 
@@ -148,7 +145,6 @@ html, body {
 
 /* Change the color of links on hover */
 .topnav2 a:hover {
-  background-color: #ddd;
   color: black;
 }
 

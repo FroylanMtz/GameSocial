@@ -1,0 +1,37 @@
+body {
+	font-family: 'Cabin Sketch', Helvetica, sans-serif;
+	background-color: lightgrey;
+}
+
+h1 {
+	color: white;
+}
+
+h2 {
+	color: purple;
+}
+
+#contenedor {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: gray;
+}
+
+table{
+	margin: 0 auto;
+}
+
+input {
+	border: 1px solid gray; /*Color del borde*/
+	background-color: yellow; /*Color del fondo*/
+	color: #000000; /*Color de letra*/
+	font-family: "Cabin Sketch, Arial"; /*Tipo de letra*/
+	font-size: 50px;
+}
+	
+.btnTictactoe {
+    width: 80px;
+    height: 80px;
+    background-color: lightcyan;
+}

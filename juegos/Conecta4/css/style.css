@@ -1,0 +1,74 @@
+body {
+	font-family: 'Bangers', cursive, Helvetica, sans-serif;
+	background-color: #e0dee0;
+}
+
+h1 {
+	color: black;
+	text-align: center;
+}
+
+h3{
+	color: black;
+	text-align: center;
+}
+
+ #circulo{
+	font-size: 30px;
+}
+
+
+/*Estilo del cuerpo en donde esta todo el juego*/
+#contenedor {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+}
+
+/*Estilo del tablero de conecta 4*/
+table{
+	margin: 0 auto;
+}
+/*Estilo de cada casilla del tablero (botones)*/
+#tablaJuego td input{
+	background-color: white;
+    border-radius: 50px;
+	width: 85px;
+	height: 85px;
+	font-size: 50px;
+
+	border: solid 3px #272b30;
+}
+#tablaJuego td{
+	width: 100px;
+	height: 100px;
+	text-align: center;
+}
+#tablaJuego {
+	background-color: #006aff;
+	border: solid 3px #272b30;
+}
+
+/*Estilo de la tabla donde estan los botones superiores*/
+
+table{
+	margin: 0 auto;
+}
+/*Estilo de cada boton*/
+#tablaBotones td input{
+	background-color: #006aff;
+	border-radius: 50px;
+	color: white;
+	font-size: 30px;
+	width: 50px;
+	height: 50px;
+	
+	border: solid 1px #272b30;
+}
+#tablaBotones td{
+	width: 100px;
+	height: 100px;
+	text-align: center;
+}
+

@@ -6,7 +6,7 @@
 
                 <h4> Historial </h4>
                 
-
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem corporis sapiente nemo esse, quasi saepe consequuntur a accusamus neque sunt! Alias facere sapiente optio ad? Assumenda aperiam impedit cupiditate vero.
             </div>
         </div>
     </div>
