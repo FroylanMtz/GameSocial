@@ -24,33 +24,22 @@
                 
                 <div class="topnav">
                     <a href="index.php"> <i class="fas fa-home"></i> Inicio</a>
-                    <a class="active" href="cuenta.html"> <i class="fas fa-user"></i> Cuenta</a>
-                    <a href="config.html"> <i class="fas fa-cogs"></i> Configuracion</a>
+                    <a href="cuenta.php"> <i class="fas fa-user"></i> Cuenta</a>
+                    <a class="active"  href="configuracion.php"> <i class="fas fa-cogs"></i> Configuracion</a>
                     <a href="login.html"> <i class="fas fa-sign-out-alt"></i> Salir</a>
                 </div>
 
             </nav>
 
-            <div class="datos_usuario">
-                <img src="img/foto_perfil.png" height="100" width="100">
-                <p> <h5> Froylan M. Wbario Martinez </h5> </p>
-            </div>
-    
-            <div class="topnav2">
-                <a class="active" href="#"> <i class="fas fa-history"></i>Historial</a>
-                <a href="#" id="id_juegos_index"> <i class="fas fa-trophy"></i> Record</a>
-                <a href="#"> <i class="fas fa-user-friends"></i>Siguiendo</a>
-                <a href="#"> <i class="fas fa-user-friends"></i>Seguidores</a>
-            </div>
-
         </div>
 
-        
-
+        <div class="topnav2">
+            <h3> <i class="fas fa-cog"></i> Configuración de la cuenta</h3>
+        </div>
         
         <div class="content">
 
-            
+
 
         </div>
 

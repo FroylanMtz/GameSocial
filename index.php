@@ -33,8 +33,8 @@
 
                 <div class="topnav">
                     <a class="active" href="index.php"> <i class="fas fa-home"></i> Inicio</a>
-                    <a href="cuenta.html"> <i class="fas fa-user"></i> Cuenta</a>
-                    <a href="config.html"> <i class="fas fa-cogs"></i> Configuracion</a>
+                    <a href="cuenta.php"> <i class="fas fa-user"></i> Cuenta</a>
+                    <a href="configuracion.php"> <i class="fas fa-cogs"></i> Configuracion</a>
                     <a href="login.html"> <i class="fas fa-sign-out-alt"></i> Salir</a>
                 </div>
 

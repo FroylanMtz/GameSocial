@@ -1,6 +1,15 @@
-<div class="content_index">
+<div class="row">
 
     
-    <h1> Aqui van las noticias xD </h1>
+    <div class="col-md-12 mt-2">
+        <div class="card">
+            <div class="card-body" style="text-align: center;">
+
+                <h4> Feed News </h4>
+                
+
+            </div>
+        </div>
+    </div>
 
 </div>
