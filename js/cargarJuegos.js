@@ -1,5 +1,14 @@
 var $btnJugarBuscaminas = $('#jugarBuscaminas');
 var $divContentIndex = $('#content_index');
+var $btnJugarConecta = $('#jugarConecta');
+var $btnJugarGato = $('#jugarGato');
+
+function btnJugarConecta_click(e){
+
+    $divContentIndex.empty();
+    $divContentIndex.load('juegos/Conecta4/index.html');
+    
+}
 
 function btnJugarBuscaminas_click(e){
 
@@ -9,4 +18,11 @@ function btnJugarBuscaminas_click(e){
 
 }
 
+function btnJugarGato_click(e){
+    $divContentIndex.empty();
+    $divContentIndex.load('juegos/TicTacToe/tictactoe.html');
+}
+
+$btnJugarConecta.on('click', btnJugarConecta_click);
 $btnJugarBuscaminas.on('click', btnJugarBuscaminas_click);
+$btnJugarGato.on('click', btnJugarGato_click);
