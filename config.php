@@ -1,6 +1,6 @@
 <?php
 
-define('DIRECTORIO_ARCHIVOS', '\files/');
+define('DIRECTORIO_ARCHIVOS', 'files\pps/');
 
 define('APP_ROOT', '../GameSocial/');
 

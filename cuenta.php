@@ -1,3 +1,17 @@
+<?php
+
+    include 'config.php';
+    include 'db.php';
+    include 'session.php';
+
+    $db = getPDO();
+    $stmt = $db->prepare('SELECT * FROM usuarios WHERE id = :id');
+    $stmt->bindParam(':id', $_SESSION['usuario_id']);
+    $stmt->execute();
+    $r = $stmt->fetch(PDO::FETCH_ASSOC);
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +38,7 @@
                 
                 <div class="topnav">
                     <a href="index.php"> <i class="fas fa-home"></i> Inicio</a>
-                    <a class="active" href="cuenta.php"> <i class="fas fa-user"></i> Cuenta</a>
+                    <a class="active" href="cuenta.php"> <i class="fas fa-user"></i> <?php echo $_SESSION['usuario_username'] ?> </a>
                     <a href="configuracion.php"> <i class="fas fa-cogs"></i> Configuracion</a>
                     <a href="login.html"> <i class="fas fa-sign-out-alt"></i> Salir</a>
                 </div>
@@ -32,8 +46,23 @@
             </nav>
 
             <div class="datos_usuario">
-                <img src="img/foto_perfil.png" height="100" width="100">
-                <p> <h5> Froylan M. Wbario Martinez </h5> </p>
+                <div class="row">
+                    <div class="col-md-3">
+
+                    </div>
+                    
+                    <div class="col-md-2 mt-2">
+                        <img id="pp" src="files/pps/<?=$r['foto']?>" height="120" width="120">
+                    </div>
+                    <div class="col-md-3">
+                        <h5> Nombre: <?php echo $_SESSION['usuario_nombre'] . ' ' . $_SESSION['usuario_apellido'] ?> </h5>
+                        <h5> Correo: <?php echo $_SESSION['usuario_correo'] ?> </h5>
+                        <h5> Edad: <?php echo $_SESSION['usuario_edad'] ?> años </h5>
+                        <h5> Nickname: <?php echo $_SESSION['usuario_username'] ?></h5>
+                    </div>
+                </div>
+                
+                
             </div>
     
             <div class="topnav2">

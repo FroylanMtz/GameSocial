@@ -11,6 +11,7 @@ create table usuarios(
     password varchar(50) not null,
     correo varchar(50) not null,
     edad int not null,
+    foto varchar(50),
 
     primary key(id)
 );

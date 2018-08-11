@@ -11,6 +11,7 @@
     $correo = filter_input(INPUT_POST, 'correo');
     $usuario = filter_input(INPUT_POST, 'usuario');
     $contrasena = filter_input(INPUT_POST, 'contrasena');
+    $pp = 'defecto';
 
 
     $db = getPDO();
@@ -37,13 +38,14 @@
 
     }
 
-    $stmt = $db->prepare('INSERT INTO usuarios(nombre, apellidos, username, password, correo, edad) VALUES (:nombre, :apellidos, :usuario, :contrasena, :correo, 0)');
+    $stmt = $db->prepare('INSERT INTO usuarios(nombre, apellidos, username, password, correo, edad, foto) VALUES (:nombre, :apellidos, :usuario, :contrasena, :correo, 0, :fotoPerfil)');
 
     $stmt->bindParam(':nombre', $nombre);
     $stmt->bindParam(':apellidos', $apellidos);
     $stmt->bindParam(':usuario', $usuario);
     $stmt->bindParam(':contrasena', $contrasena);
     $stmt->bindParam(':correo', $correo);
+    $stmt->bindParam(':fotoPerfil', $pp);
     $stmt->execute();
 
     $stmt = $db->prepare('SELECT last_insert_id() id');

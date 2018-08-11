@@ -31,13 +31,14 @@
             $_SESSION['usuario_username'] = $r['username'];
             $_SESSION['usuario_correo'] = $r['correo'];
             $_SESSION['usuario_edad'] = $r['edad'];
+            $_SESSION['usuario_foto'] = $r['foto'];
             $jsonResp['mensaje'] = 'session iniciada';
-        
 
 
         }else{
             $jsonResp['error'] = true;
             $jsonResp['mensaje'] = 'Contrasena Incorrecta';
+
         }
 
     }else{

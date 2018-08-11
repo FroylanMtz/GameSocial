@@ -14,17 +14,9 @@ h3{
 }
 
  #circulo{
-	font-size: 30px;
+	font-size: 10px;
 }
 
-
-/*Estilo del cuerpo en donde esta todo el juego*/
-#contenedor {
-	width: 1000px;
-	margin-left: auto;
-	margin-right: auto;
-	background-color: white;
-}
 
 /*Estilo del tablero de conecta 4*/
 table{
@@ -34,15 +26,15 @@ table{
 #tablaJuego td input{
 	background-color: white;
     border-radius: 50px;
-	width: 85px;
-	height: 85px;
+	width: 70px;
+	height: 70px;
 	font-size: 50px;
 
 	border: solid 3px #272b30;
 }
 #tablaJuego td{
-	width: 100px;
-	height: 100px;
+	width: 80px;
+	height: 80px;
 	text-align: center;
 }
 #tablaJuego {
@@ -67,8 +59,8 @@ table{
 	border: solid 1px #272b30;
 }
 #tablaBotones td{
-	width: 100px;
-	height: 100px;
+	width: 80px;
+	height: 80px;
 	text-align: center;
 }
 

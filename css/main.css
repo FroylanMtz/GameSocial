@@ -161,6 +161,12 @@ html, body {
 }
 
 
+#formularioEditarDatos{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 1%;
+}
+
 /* ///////////////////////////ICONOS DE LA TARJERA DE JUEGOS */
 
 /*#juegoBuscaminas a {
@@ -172,3 +178,9 @@ html, body {
     text-decoration: none;
     font-size: 40px;
 }*/
+
+/* FOTO DE PERFIL */
+
+#pp {
+    border-radius: 80px;
+}
