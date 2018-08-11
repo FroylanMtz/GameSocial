@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="juegos/Buscaminas/css/style.css">
     <link rel="stylesheet" href="juegos/Conecta4/css/style.css">
     <link rel="stylesheet" href="juegos/TicTacToe/css/style.css">
+    <link rel="stylesheet" href="juegos/Ahorcado/estilo-ahoracado.css">
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     
