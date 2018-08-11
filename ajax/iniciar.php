@@ -32,6 +32,7 @@
             $_SESSION['usuario_correo'] = $r['correo'];
             $_SESSION['usuario_edad'] = $r['edad'];
             $_SESSION['usuario_foto'] = $r['foto'];
+            $_SESSION['usuario_pass'] = $r['password'];
             $jsonResp['mensaje'] = 'session iniciada';
 
 

@@ -13,6 +13,10 @@
         echo '<script> alert("Solo esta permitido subir fotos"); </script>';
     }
 
+    if($error == 2){
+        echo '<script> alert("Error en la contraseña"); </script>';
+    }
+
 
     $db = getPDO();
     $stmt = $db->prepare('SELECT * FROM usuarios WHERE id = :id');
@@ -68,39 +72,45 @@
                     <div class="card">
                         <div class="class-body" id="formularioEditarDatos">
                             
+                            <h3> Editar datos de perfil </h3>
+
+                            <h4> Cambiar foto </h4>
                             <img id="pp" src="files/pps/<?=$r['foto']?>" height="120" width="120">
+
+                            
 
                             <form action="subir_foto.php" method="POST" enctype="multipart/form-data" > <!-- Tiene que llevar el enctype-->
                                 <label for="iArchivo"> Archivo: </label>
                                 <input type="file" id="iArchivo" name="archivo" required="required" /><br/>
-                                <input id="boton" type="submit" value="subir" />    
+                                <input id="boton" type="submit" value="Cambiar Foto" />    
                             </form>
 
-                            <!-- <form action="accion.php" method="post" >
+                            <hr/>
 
-                                <label style="color: red; " id="errorInicio">  </label>
-                                <br>
-
+                            <form action="editar_datos.php" method="POST" >
                                 
-
+                                <h4> Editar datos </h4>
                                 <label id="lbl_name"> Nombre(s) </label>
-                                <input type="text" id="txtNombreRegistro" name="nombre" class="form-control">
+                                <input type="text" id="txtNombreRegistro" name="nombre" value="<?= $r['nombre'] ?>" class="form-control">
                                 
                                 <label id="lbl_last_name"> Apellido(s) </label>
-                                <input type="text" id="txtApellidosRegistro" name="apellidos" class="form-control">
+                                <input type="text" id="txtApellidosRegistro" name="apellidos" value="<?= $r['apellidos'] ?>" class="form-control">
+
+                                <label id="lbl_pass_re"> Edad </label>
+                                <input type="text" id="txtEdad" name="edad" value="<?= $r['edad'] ?>" class="form-control">
 
                                 <label id="lbl_email"> Correo </label>
-                                <input type="email" id="txtCorreoRegistro" name="correo" class="form-control">
-
-                                <label id="lbl_username"> Nickname </label>
-                                <input type="text" id="txtUsuarioRegistro" name="usuario" class="form-control">
-                                
-                                <label id="lbl_pass"> Contraseña Acutal </label>
-                                <input type="password" id="txtContrasenaRegistro" name="contrasena" class="form-control">
+                                <input type="email" id="txtCorreoRegistro" name="correo" value="<?= $r['correo'] ?>" class="form-control">
 
                                 <label id="lbl_pass_re"> Nueva Contraseña </label>
-                                <input type="password" id="txtContrasenaReRegistro" name="contrasena_re" class="form-control">
+                                <input type="password" id="txtContrasenaReRegistro" name="contrasenaN" value="<?= $r['password'] ?>" class="form-control">
+                                
+                                <br> 
 
+                                <p style="color: red"> Para realizar cambios ingrese su contraseña: </p>
+
+                                <label id="lbl_pass"> Contraseña Actual </label>
+                                <input type="password" id="txtContrasenaRegistro" name="contrasenaA" class="form-control">
 
                                 <div id="boton_inicio">
                                     <button id="btnIniciarSesion" class="btn btn-primary col-md-6 mt-3" >
@@ -110,7 +120,7 @@
 
                                 
 
-                            </form> -->
+                            </form>
                             
                         <div>
                     </div>
@@ -132,7 +142,6 @@
     
     
     <script src="js/jquery.js" charset="utf-8"></script>
-    <script src="js/subirFoto.js" charset="utf-8"></script>
     
     <!--<script src="js/bootstrap.min.js"></script>-->
 

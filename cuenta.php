@@ -55,10 +55,10 @@
                         <img id="pp" src="files/pps/<?=$r['foto']?>" height="120" width="120">
                     </div>
                     <div class="col-md-3">
-                        <h5> Nombre: <?php echo $_SESSION['usuario_nombre'] . ' ' . $_SESSION['usuario_apellido'] ?> </h5>
-                        <h5> Correo: <?php echo $_SESSION['usuario_correo'] ?> </h5>
-                        <h5> Edad: <?php echo $_SESSION['usuario_edad'] ?> años </h5>
-                        <h5> Nickname: <?php echo $_SESSION['usuario_username'] ?></h5>
+                        <h5> Nombre: <?php echo $r['nombre'] . ' ' . $r['apellidos'] ?> </h5>
+                        <h5> Correo: <?php echo $r['correo'] ?> </h5>
+                        <h5> Edad: <?php echo $r['edad'] ?> años </h5>
+                        <h5> Nickname: <?php echo $r['username'] ?></h5>
                     </div>
                 </div>
                 
