@@ -51,6 +51,7 @@
 
                 
                 <div class="topnav">
+                    <a href="busqueda.php"> <i class="fas fa-search"></i> Busqueda </a>
                     <a href="index.php"> <i class="fas fa-home"></i> Inicio</a>
                     <a href="cuenta.php"> <i class="fas fa-user"></i> <?php echo $_SESSION['usuario_username'] ?> </a>
                     <a class="active"  href="configuracion.php"> <i class="fas fa-cogs"></i> Configuracion</a>
@@ -59,14 +60,15 @@
 
             </nav>
 
+            <div class="topnav2">
+                <h3> <i class="fas fa-cog"></i> Configuración de la cuenta</h3>
+            </div>
+
         </div>
 
-        <div class="topnav2">
-            <h3> <i class="fas fa-cog"></i> Configuración de la cuenta</h3>
-        </div>
+        
         
         <div class="content">
-
             <div class="raw">
                 <div class="col-md-12 mt-2">
                     <div class="card">

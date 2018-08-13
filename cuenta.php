@@ -37,6 +37,7 @@
 
                 
                 <div class="topnav">
+                    <a href="busqueda.php"> <i class="fas fa-search"></i> Busqueda </a>
                     <a href="index.php"> <i class="fas fa-home"></i> Inicio</a>
                     <a class="active" href="cuenta.php"> <i class="fas fa-user"></i> <?php echo $_SESSION['usuario_username'] ?> </a>
                     <a href="configuracion.php"> <i class="fas fa-cogs"></i> Configuracion</a>

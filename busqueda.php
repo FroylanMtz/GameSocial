@@ -16,10 +16,6 @@
     <title>GameSocial</title>
 
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="juegos/Buscaminas/css/style.css">
-    <link rel="stylesheet" href="juegos/Conecta4/css/style.css">
-    <link rel="stylesheet" href="juegos/TicTacToe/css/style.css">
-    <link rel="stylesheet" href="juegos/Ahorcado/estilo-ahoracado.css">
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     
@@ -33,8 +29,8 @@
                 <a class="navbar-brand" href="index.html"> <img src="img/twigame.png" width="150" height="40"> </a>
 
                 <div class="topnav">
-                    <a href="busqueda.php"> <i class="fas fa-search"></i> Busqueda </a>
-                    <a class="active" href="index.php"> <i class="fas fa-home"></i> Inicio</a>
+                    <a class="active" href="busqueda.php"> <i class="fas fa-search"></i> Busqueda </a>
+                    <a href="index.php"> <i class="fas fa-home"></i> Inicio</a>
                     <a href="cuenta.php"> <i class="fas fa-user"></i> <?php echo $_SESSION['usuario_username'] ?> </a>
                     <a href="configuracion.php"> <i class="fas fa-cogs"></i> Configuracion </a>
                     <a href="login.html"> <i class="fas fa-sign-out-alt"></i> Salir</a>
@@ -43,18 +39,33 @@
             </nav>
 
             <div class="topnav2">
-                <a href="#" id="cargarNoticias"> <i class="far fa-newspaper"></i> News </a>
-                <a href="#" id="cargarJuegos"> <i class="fas fa-gamepad"></i> Juegos </a>
-                <a href="#" id="cargarNotificaciones"> <i class="fas fa-bell"></i> Notificaciones </a>
+                <h3>  Busqueda de usuarios </h3>
             </div>
             
         </div>
 
-        <div class="content_index" id="content_index"> </div>   
+        <div class="content_index" id="content_index">
+            <div class="raw">
+                <div class="col-md-12 mt-2">
+                    <div class="card">
+                        <div class="card-header" style="text-align: center;">
+
+                            <input type="text" placeholder="Buscar amigos" style="width: 40%; height: 40px; font-size: 25px;">  </input>
+                            <input type="button" class="btn btn-primary" value="Buscar" style="width: 10%"> </input>
+
+                        </div>
+                        <div class="card-body" >
+
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>   
     </div>
     
     <script src="js/jquery.js"></script>
-    <script src="js/inicio.js" charset="utf-8"></script>
     
 </body>
 </html>

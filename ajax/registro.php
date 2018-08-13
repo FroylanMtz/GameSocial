@@ -11,7 +11,7 @@
     $correo = filter_input(INPUT_POST, 'correo');
     $usuario = filter_input(INPUT_POST, 'usuario');
     $contrasena = filter_input(INPUT_POST, 'contrasena');
-    $pp = 'defecto';
+    $pp = 'defecto.png';
 
 
     $db = getPDO();
