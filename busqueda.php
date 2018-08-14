@@ -6,6 +6,9 @@
     include 'db.php';
     include 'session.php';
 
+    $usuario = filter_input(INPUT_POST, 'usuario');
+
+
 ?>
 
 
@@ -50,15 +53,18 @@
                     <div class="card">
                         <div class="card-header" style="text-align: center;">
 
-                            <input type="text" placeholder="Buscar amigos" style="width: 40%; height: 40px; font-size: 25px;">  </input>
-                            <input type="button" class="btn btn-primary" value="Buscar" style="width: 10%"> </input>
+                            <h6 id="errorBuscar" style="color: red;"></h6>
+                            <form > <!-- Tiene que llevar el enctype-->
+                                <input id="txtBuscar" type="text" placeholder="Buscar amigos" style="width: 40%; height: 40px; font-size: 25px;">  </input>
+                                <input id="btnBuscar" type="button" class="btn btn-primary" value="Buscar" style="width: 10%"> </input>
+                            </form>
 
                         </div>
-                        <div class="card-body" >
+                        
+                    </div>
 
-                            
-                            
-                        </div>
+                    <div id="resultadoBusqueda" class="card mt-2">
+                        
                     </div>
                 </div>
             </div> 
@@ -66,6 +72,7 @@
     </div>
     
     <script src="js/jquery.js"></script>
+    <script src="js/buscar.js"></script>
     
 </body>
 </html>
