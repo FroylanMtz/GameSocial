@@ -3,17 +3,13 @@
     include 'config.php';
     include 'db.php';
     include 'session.php';
-
     $usuario = filter_input(INPUT_GET, 'usuario');
-
     $db = getPDO();
     $stmt = $db->prepare('SELECT * FROM usuarios WHERE username = :username');
     $stmt->bindParam(':username', $usuario);
     $stmt->execute();
     $r = $stmt->fetch(PDO::FETCH_ASSOC);
-
     $_SESSION['usuario_actua'] = $usuario;
-    
 ?>
 
 <!DOCTYPE html>
