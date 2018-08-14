@@ -1,0 +1,8 @@
+<?php
+
+
+
+$usuario_actual = "";
+
+
+?>

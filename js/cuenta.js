@@ -42,7 +42,7 @@ function cargarSiguiendo(e){
     $btnCargarSiguiendo.css('background-color', 'rgb(73, 132, 199)');
     $btnCargarSeguidores.css('background-color', 'rgb(23, 92, 172)');
 
-    $divContentCuenta.load('ajax/siguiendo.php');
+    $divContentCuenta.load('ajax/siguiendo.php?usuario="froylan"');
 
 }
 

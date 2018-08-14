@@ -34,7 +34,7 @@
                 <div class="topnav">
                     <a class="active" href="busqueda.php"> <i class="fas fa-search"></i> Busqueda </a>
                     <a href="index.php"> <i class="fas fa-home"></i> Inicio</a>
-                    <a href="cuenta.php"> <i class="fas fa-user"></i> <?php echo $_SESSION['usuario_username'] ?> </a>
+                    <a href="cuenta.php?usuario=<?= $_SESSION['usuario_username']?>" > <i class="fas fa-user"></i> <?php echo $_SESSION['usuario_username'] ?> </a>
                     <a href="configuracion.php"> <i class="fas fa-cogs"></i> Configuracion </a>
                     <a href="login.html"> <i class="fas fa-sign-out-alt"></i> Salir</a>
                 </div>
@@ -55,7 +55,7 @@
 
                             <h6 id="errorBuscar" style="color: red;"></h6>
                             <form > <!-- Tiene que llevar el enctype-->
-                                <input id="txtBuscar" type="text" placeholder="Buscar amigos" style="width: 40%; height: 40px; font-size: 25px;">  </input>
+                                <input id="txtBuscar" type="text" placeholder="Ingresa el nickname" style="width: 40%; height: 40px; font-size: 25px;">  </input>
                                 <input id="btnBuscar" type="button" class="btn btn-primary" value="Buscar" style="width: 10%"> </input>
                             </form>
 

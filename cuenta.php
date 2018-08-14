@@ -12,6 +12,8 @@
     $stmt->execute();
     $r = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    $_SESSION['usuario_actua'] = $usuario;
+    
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +43,15 @@
                 <div class="topnav">
                     <a href="busqueda.php"> <i class="fas fa-search"></i> Busqueda </a>
                     <a href="index.php"> <i class="fas fa-home"></i> Inicio</a>
-                    <a class="active" href="cuenta.php?usuario=<?= $_SESSION['username']?>"> <i class="fas fa-user"></i> <?php echo $_SESSION['usuario_username'] ?> </a>
+
+                    <?php
+                        if($usuario == $_SESSION['usuario_username']){
+                            echo '<a class="active" href="cuenta.php?usuario=' . $_SESSION["usuario_username"] .'"> <i class="fas fa-user"></i> '. $_SESSION['usuario_username'] . ' </a> ';
+                        }else{
+                            echo '<a href="cuenta.php?usuario=' . $_SESSION["usuario_username"] .'"> <i class="fas fa-user"></i> '. $_SESSION['usuario_username'] . ' </a> ';
+                        }
+                    ?>
+                    
                     <a href="configuracion.php"> <i class="fas fa-cogs"></i> Configuracion</a>
                     <a href="login.html"> <i class="fas fa-sign-out-alt"></i> Salir</a>
                 </div>
@@ -63,6 +73,13 @@
                         <h5> Edad: <?php echo $r['edad'] ?> años </h5>
                         <h5> Nickname: <?php echo $r['username'] ?></h5>
                     </div>
+                    <div class="col-md-3 mt-5">
+                        <?php
+                            if($usuario != $_SESSION['usuario_username']){
+                                echo '<button class="btn btn-primary" href="#">  <i class="fas fa-map"></i> Seguir </button>';
+                            }
+                        ?>
+                    </div>
                 </div>
                 
                 
@@ -81,7 +98,7 @@
 
         
         <div class="content" id="content_cuenta">
-
+            
             
 
         </div>
