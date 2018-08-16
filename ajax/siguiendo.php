@@ -35,12 +35,25 @@ $perfil = $db->prepare('SELECT * FROM usuarios WHERE id = :id');
                 <?php
                     
                     while($r = $stmt->fetch(PDO::FETCH_ASSOC)){
-                        
+                            
                         $perfil->bindParam(':id', $r['id_seguido']);
                         $perfil->execute();
                         $datosPerfil = $perfil->fetch(PDO::FETCH_ASSOC);
-                        echo '<h5>'. $datosPerfil['nombre'] .' '. $datosPerfil['apellidos'] .' </h5>';
-                    }  
+                        
+                        echo '<div class="row mt-2">';
+                            echo '<div class="col-md-4">  </div>';
+
+                            echo '<div class="col-md-4">';
+                                echo '<div class="card">';
+                                    echo '<div class="card-header">';
+                                        echo ' <img id="pp" style="width:70px; height:70px;" src="files/pps/' . $datosPerfil['foto'] .' "> ';
+                                        echo '<h5> <a href="cuenta.php?usuario='. $datosPerfil['username'] .'" > '. $datosPerfil['nombre'] .' '. $datosPerfil['apellidos'] .' </a> </h5>';
+                                        echo '<h6> <i> '. $datosPerfil['username'] .'  </i> </h6>';
+                                    echo '</div>';
+                                echo '</div>';
+                            echo '</div>';
+                        echo '</div>';
+                    } 
                     
                 
                 ?>
