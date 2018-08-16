@@ -9,7 +9,7 @@
     $stmt->bindParam(':username', $usuario);
     $stmt->execute();
     $r = $stmt->fetch(PDO::FETCH_ASSOC);
-    $_SESSION['usuario_actua'] = $usuario;
+    $_SESSION['usuario_actual'] = $usuario;
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +72,7 @@
                     <div class="col-md-3 mt-5">
                         <?php
                             if($usuario != $_SESSION['usuario_username']){
-                                echo '<button class="btn btn-primary" href="#">  <i class="fas fa-map"></i> Seguir </button>';
+                                echo '<a class="btn btn-primary" href="seguir_usuario.php?usuario='.$_SESSION['usuario_actual'].'">  <i class="fas fa-map"></i> Seguir </a>';
                             }
                         ?>
                     </div>
