@@ -11,16 +11,13 @@ $stmt = $db->prepare('SELECT * FROM usuarios WHERE username = :username');
 $stmt->bindParam(':username', $usuario);
 $stmt->execute();
 $datosUsuario = $stmt->fetch(PDO::FETCH_ASSOC);
-$idUsuario = (int)$r['id'];
+$idUsuario = (int)$datosUsuario['id'];
 
-$stmt = $db->prepare('SELECT * FROM puntajes WHERE id_seguido = :idUsuario');
+$stmt = $db->prepare('SELECT * FROM puntajes WHERE id_usuario = :idUsuario');
 $stmt->bindParam(':idUsuario', $idUsuario );
 $stmt->execute();
 
-
-
-$stmt = $db->prepare('SELECT * FROM juegos WHERE id = :id');
-
+$juegos = $db->prepare('SELECT * FROM juegos WHERE id = :id');
 
 ?>
 
@@ -34,22 +31,20 @@ $stmt = $db->prepare('SELECT * FROM juegos WHERE id = :id');
 
                 <?php
                     while($puntajes = $stmt->fetch(PDO::FETCH_ASSOC) ){
-
-                        $idPuntaje = (int)$puntajes['id'];
-                            
-                        //$perfil->bindParam(':id', $r['id_seguidor']);
-                        //$perfil->execute();
-                        //$datosPerfil = $perfil->fetch(PDO::FETCH_ASSOC);
+                        
+                        $idJuego = (int)$puntajes['id_juego'];
+                        $juegos->bindParam(':id', $idJuego );
+                        $juegos->execute();
+                        $datosJuegos = $juegos->fetch(PDO::FETCH_ASSOC);
                         
                         echo '<div class="row mt-2">';
-                            echo '<div class="col-md-4">  </div>';
+                            echo '<div class="col-md-3">  </div>';
 
-                            echo '<div class="col-md-4">';
+                            echo '<div class="col-md-6">';
                                 echo '<div class="card">';
                                     echo '<div class="card-header">';
-                                        echo ' <img id="pp" style="width:70px; height:70px;" src="files/pps/' . $datosPerfil['foto'] .' "> ';
-                                        echo '<h5> <a href="cuenta.php?usuario='. $datosPerfil['username'] .'" > '. $datosPerfil['nombre'] .' '. $datosPerfil['apellidos'] .' </a> </h5>';
-                                        echo '<h6> <i> '. $datosPerfil['username'] .'  </i> </h6>';    
+                                        echo ' <img id="pp" style="width:70px; height:70px;" src="files/pps/' . $datosUsuario['foto'] .' "> ';
+                                        echo '<h6> '. $datosUsuario['username'] .' ha jugado el juego de ' . $datosJuegos['nombre'] . ' y ha conseguido una puntuacion de '. $puntajes['marcador'] .' Puntos </h6>';  
                                     echo '</div>';
                                 echo '</div>';
                             echo '</div>';
