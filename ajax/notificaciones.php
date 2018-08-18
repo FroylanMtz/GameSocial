@@ -5,7 +5,7 @@
         <div class="card">
             <div class="card-body" style="text-align: center;">
 
-                <h4> Notificaciones </h4>
+                <h4> Notificaciones </h4>                
                 
 
             </div>
