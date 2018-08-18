@@ -48,7 +48,7 @@ $btnCargarNotificaciones.on('click', btnCargarNotificaciones_click);
 $btnCargarJuegos.on('click', btnCargarJuegos_click);
 
 
-//Para que salga algo
+//Para que salga algo por default
 $divContentIndex.empty();
 $divContentIndex.text('Loading...');
 
