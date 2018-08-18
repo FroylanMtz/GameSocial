@@ -63,3 +63,16 @@ $btnCargarHistorial.on('click', cargarHistorial);
 $btnCargarRecords.on('click', cargarRecords);
 $btnCargarSiguiendo.on('click', cargarSiguiendo);
 $btnCargarSeguidores.on('click', cargarSeguidores);
+
+
+//Para que salgan los records por default
+$divContentCuenta.empty();
+$divContentCuenta.text('Loading...');
+
+$btnCargarHistorial.css('background-color', 'rgb(23, 92, 172)');
+$btnCargarRecords.css('background-color', 'rgb(73, 132, 199)');
+$btnCargarSiguiendo.css('background-color', 'rgb(23, 92, 172)');
+$btnCargarSeguidores.css('background-color', 'rgb(23, 92, 172)');
+
+
+$divContentCuenta.load('ajax/records.php');
