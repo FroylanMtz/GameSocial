@@ -5,10 +5,10 @@ var btnAsignarTablero = document.getElementById('btnAsignarTablero');
 var gridJuego = document.getElementById('gridJuego');
 var parametros = document.getElementById('parametros');
 
+var $btnGuardarDatos = $('#test');
+
 var marcador = 0;
 
-console.log(idUsuario);
-console.log(idJuego);
 
 //arreglos para almacenar la posicion de las minas tanto fila como columna
 var filaMina = [];
@@ -65,13 +65,7 @@ function btn_click(e){
 
 			marcador = 10;
 
-			var param = {usuario: idUsuario, juego: idJuego, marcador: marcador};
-
-			$.post('ajax/puntaje_buscaminas.php',param,function(data){
-
-				location.href = "../../GameSocial";
-
-			});
+			guardarDatos(marcador);
 
 			
 
@@ -87,6 +81,13 @@ function btn_click(e){
 			if( ((txtCantCol.value * txtCantFilas.value) - txtCantMinas.value) == casillasDestapadas  ){
 				setTimeout(function(){alert(' ¡Ganaste!...Has descubierto todas las minas :D')}, 500);
 				marcarMinas();
+
+				alert('Has ganado, has obtenido 100 puntos');
+
+				marcador = 100;
+
+				guardarDatos(marcador);
+
 				location.href = "../../GameSocial";
 			}
 
@@ -367,6 +368,20 @@ function crearTablero(e){
 		}
 	}
 }
+
+function guardarDatos(marcador){
+
+	var params = {usuario: idUsuario, juego: idJuego, marcador: marcador};
+
+	$.post('ajax/puntaje_buscaminas.php',params,function(data){
+
+		//console.log('asdfasdf ' + data.mensaje);
+		location.href = "../../GameSocial";
+
+	});
+
+}
+
 
 //Listener para el boton que crea el tablero, para que lo cree 
 btnAsignarTablero.addEventListener('click', crearTablero);

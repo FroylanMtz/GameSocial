@@ -98,9 +98,17 @@ function terminarJuego(turno){
     if(turno == 'rojas'){
         alert('Felicidades le has ganado a la computadora');
         alert('Has obtenido 100 puntos');
+
+        marcador = 100;
+
+        guardarDatos(marcador);
+
     }else{
         alert('La computadora te ha ganado');
         alert('Has obtenido 10 puntos');
+    
+        marcador = 10;
+        guardarDatos(marcador);
     }
 
     location.href = "../../GameSocial";
@@ -248,6 +256,20 @@ function crearBotones(){
     //y al final cada tr al cuerpo de la tabla
     gridBotones.appendChild(tr);
 }
+
+function guardarDatos(marcador){
+
+	var params = {usuario: idUsuario, juego: idJuego, marcador: marcador};
+
+	$.post('ajax/puntaje_buscaminas.php',params,function(data){
+
+		//console.log('asdfasdf ' + data.mensaje);
+		location.href = "../../GameSocial";
+
+	});
+
+}
+
 
 /* Se manda llamar las funciones que crean el tablero y los botones accionadores por defecto */
 crearTablero();

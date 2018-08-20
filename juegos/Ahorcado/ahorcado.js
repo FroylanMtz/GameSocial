@@ -37,6 +37,7 @@ var buttons = document.getElementsByClassName('letra');
 // Boton de reset
 var btnInicio = document.getElementById("reset");
 
+var marcador = 0;
 
 // ### FUNCIONES ###
 
@@ -109,8 +110,14 @@ function compruebaFin() {
     document.getElementById("reset").innerHTML = "Empezar";
 
     alert('Felicidades has ganado');
-    alert('Has ganado 1000 puntos')
+    alert('Has ganado 100 puntos');
+
+    marcador = 100;
+
+    guardarDatos(marcador);
+
     location.href = "../../GameSocial";
+
 
   }else if( cont == 0 ) {
     document.getElementById("msg-final").innerHTML = "Game Over";
@@ -122,6 +129,11 @@ function compruebaFin() {
     
     alert('Que triste has perdido contra la PC');
     alert('Aun asi tienes 10 puntos de consolacion');
+
+    marcador = 10;
+
+    guardarDatos(marcador);
+
     location.href = "../../GameSocial";
   }
 }
@@ -134,6 +146,20 @@ function inicio() {
   cont = 6;
   document.getElementById("intentos").innerHTML=cont;
 }
+
+function guardarDatos(marcador){
+
+	var params = {usuario: idUsuario, juego: idJuego, marcador: marcador};
+
+	$.post('ajax/puntaje_buscaminas.php',params,function(data){
+
+		//console.log('asdfasdf ' + data.mensaje);
+		location.href = "../../GameSocial";
+
+	});
+
+}
+
 
 // Iniciar
 window.onload = inicio();

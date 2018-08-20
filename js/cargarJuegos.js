@@ -7,14 +7,14 @@ var $btnJugarAhorcado = $('#jugarAhorcado');
 function btnJugarAhorcado_click(e){
 
     $divContentIndex.empty();
-    $divContentIndex.load('juegos/Ahorcado/Ahorcado.html');
+    $divContentIndex.load('juegos/Ahorcado/Ahorcado.php');
 
 }
 
 function btnJugarConecta_click(e){
 
     $divContentIndex.empty();
-    $divContentIndex.load('juegos/Conecta4/index.html');
+    $divContentIndex.load('juegos/Conecta4/index.php');
     
 }
 
@@ -28,7 +28,7 @@ function btnJugarBuscaminas_click(e){
 
 function btnJugarGato_click(e){
     $divContentIndex.empty();
-    $divContentIndex.load('juegos/TicTacToe/tictactoe.html');
+    $divContentIndex.load('juegos/TicTacToe/tictactoe.php');
 }
 
 $btnJugarConecta.on('click', btnJugarConecta_click);

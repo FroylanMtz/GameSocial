@@ -1,3 +1,16 @@
+<?php
+
+include '../../session.php';
+
+$idUsuario = $_SESSION['usuario_id'];
+$idJuego = 1;
+
+?>
+
+<script>  
+	var idUsuario = '<?php echo $idUsuario;?>'; 
+	var idJuego = '<?php echo $idJuego;?>';
+</script>
 
 <div class="col-md-12 mt-2">
     <div class="card"> 
@@ -50,6 +63,7 @@
             </div>
         
             </div>
+            <script src="js/jquery.js"></script>
             <script src="juegos/Ahorcado/ahorcado.js"></script>
 
         </div>

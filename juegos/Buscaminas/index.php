@@ -3,7 +3,7 @@
 include '../../session.php';
 
 $idUsuario = $_SESSION['usuario_id'];
-$idJuego = "buscaminas";
+$idJuego = 2;
 
 ?>
 

@@ -14,6 +14,8 @@ var b_2_2 = document.getElementById('b_2_2');
 var turno = 'X';
 var totalTurnos = 0
 
+var marcador = 0;
+
 //Arreglo que guarda las posiciones actuales del juego
 var posiciones = [
     [' ', ' ', ' '],
@@ -42,15 +44,26 @@ function verificarGanador (){
         alert('Has obtenido 50 puntos ');
         alert('Adios!');
 
+        marcador = 50;
+        guardarDatos(marcador);
+
         return true;
     }
 
     if(gano){
         if(turno === 'X'){
-            alert('Felicidades has ganado! 100 puntos');
+            alert('Felicidades, has ganado!');
+            alert('Has obtenido 100 puntos');
+
+            marcador = 100;
+            guardarDatos(marcador);
             return true;
         }else{
-            alert('La computadora te ha ganado jajajaj 0 puntos!');
+            alert('Has perdido contra la pc');
+            alert('Pero has conseguido 10 puntos');
+
+            marcador = 10;
+            guardarDatos(marcador);
             return true;
         }
 
@@ -125,6 +138,20 @@ function b_click(e) {
     }
 
 }
+
+function guardarDatos(marcador){
+
+	var params = {usuario: idUsuario, juego: idJuego, marcador: marcador};
+
+	$.post('ajax/puntaje_buscaminas.php',params,function(data){
+
+		//console.log('asdfasdf ' + data.mensaje);
+		location.href = "../../GameSocial";
+
+	});
+
+}
+
 
 //Elementos oyentes al evento click, que son todos los botones
 b_0_0.addEventListener('click', b_click);

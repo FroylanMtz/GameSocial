@@ -1,4 +1,16 @@
+<?php
 
+include '../../session.php';
+
+$idUsuario = $_SESSION['usuario_id'];
+$idJuego = 3;
+
+?>
+
+<script>  
+	var idUsuario = '<?php echo $idUsuario;?>'; 
+	var idJuego = '<?php echo $idJuego;?>';
+</script>
 
 <div class="col-md-12 mt-2">
 	<div class="card">
@@ -29,7 +41,7 @@
 				</table>
 			</div>
 			
-
+			<script src="js/jquery.js"></script>
 			<script src="juegos/Conecta4/js/index.js" type="text/javascript"></script>
 		</div>
 	
