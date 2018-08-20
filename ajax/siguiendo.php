@@ -41,9 +41,9 @@ $perfil = $db->prepare('SELECT * FROM usuarios WHERE id = :id');
                         $datosPerfil = $perfil->fetch(PDO::FETCH_ASSOC);
                         
                         echo '<div class="row mt-2">';
-                            echo '<div class="col-md-4">  </div>';
+                            echo '<div class="col-md-3">  </div>';
 
-                            echo '<div class="col-md-4">';
+                            echo '<div class="col-md-6">';
                                 echo '<div class="card">';
                                     echo '<div class="card-header">';
                                         echo ' <img id="pp" style="width:70px; height:70px;" src="files/pps/' . $datosPerfil['foto'] .' "> ';

@@ -107,7 +107,11 @@ function compruebaFin() {
       buttons[i].disabled = true;
     }
     document.getElementById("reset").innerHTML = "Empezar";
-    btnInicio.onclick = function() { location.reload() };
+
+    alert('Felicidades has ganado');
+    alert('Has ganado 1000 puntos')
+    location.href = "../../GameSocial";
+
   }else if( cont == 0 ) {
     document.getElementById("msg-final").innerHTML = "Game Over";
     document.getElementById("msg-final").className += "zoom-in";
@@ -115,7 +119,10 @@ function compruebaFin() {
       buttons[i].disabled = true;
     }
     document.getElementById("reset").innerHTML = "Empezar";
-    btnInicio.onclick = function () { location.reload() };
+    
+    alert('Que triste has perdido contra la PC');
+    alert('Aun asi tienes 10 puntos de consolacion');
+    location.href = "../../GameSocial";
   }
 }
 

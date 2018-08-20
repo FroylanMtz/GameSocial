@@ -9,6 +9,21 @@
     $stmt->execute();
     $r = $stmt->fetch(PDO::FETCH_ASSOC);
     $_SESSION['usuario_actual'] = $usuario;
+
+
+    $stmt = $db->prepare('SELECT * FROM usuarios WHERE username = :username');
+    $stmt->bindParam(':username', $usuario);
+    $stmt->execute();
+    $datosUsuario = $stmt->fetch(PDO::FETCH_ASSOC);
+    $idUsuario = (int)$datosUsuario['id'];
+
+
+    $stmt = $db->prepare('SELECT id_seguidor, id_seguido FROM seguimiento WHERE id_seguidor = :seguidor AND id_seguido = :seguido');
+    $stmt->bindParam(':seguidor', $_SESSION['usuario_id'] );
+    $stmt->bindParam(':seguido', $idUsuario );
+    $stmt->execute();
+    $loSigo = $stmt->fetch(PDO::FETCH_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
@@ -71,13 +86,18 @@
                     <div class="col-md-3 mt-5">
                         <?php
                             if($usuario != $_SESSION['usuario_username']){
-                                echo '<a class="btn btn-primary" href="seguir_usuario.php?usuario='.$_SESSION['usuario_actual'].'">  <i class="fas fa-map"></i> Seguir </a>';
+                                
+                                
+                                if(!$loSigo){
+                                    echo '<a class="btn btn-primary" href="seguir_usuario.php?usuario='.$_SESSION['usuario_actual'].'">  <i class="fas fa-map"></i> Seguir </a>';
+                                }else{
+                                    echo '<a class="btn btn-danger" href="#">  <i class="fas fa-times"></i> Dejar de seguir </a>';
+                                }
+
                             }
                         ?>
                     </div>
                 </div>
-                
-                
             </div>
     
             <div class="topnav2">

@@ -22,7 +22,7 @@ function btnJugarBuscaminas_click(e){
 
     $divContentIndex.empty();
     $divContentIndex.text('Loading...');
-    $divContentIndex.load('juegos/Buscaminas/index.html');
+    $divContentIndex.load('juegos/Buscaminas/index.php?');
 
 }
 

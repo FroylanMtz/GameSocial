@@ -5,6 +5,11 @@ var btnAsignarTablero = document.getElementById('btnAsignarTablero');
 var gridJuego = document.getElementById('gridJuego');
 var parametros = document.getElementById('parametros');
 
+var marcador = 0;
+
+console.log(idUsuario);
+console.log(idJuego);
+
 //arreglos para almacenar la posicion de las minas tanto fila como columna
 var filaMina = [];
 var colMina = [];
@@ -55,7 +60,20 @@ function btn_click(e){
 			revelarMinas(); // Revela las otras minas
 
 			//espera 0.5 segundos antes de mandar la alerta de que ha perido el juego
-			setTimeout(function(){alert('¡Boom!...Has descubierto una mina, juego terminado')}, 500);
+			alert('¡Boom!...Has descubierto una mina, juego terminado');
+			alert('Has Perdido, pero has obtenido 10 puntos');
+
+			marcador = 10;
+
+			var param = {usuario: idUsuario, juego: idJuego, marcador: marcador};
+
+			$.post('ajax/puntaje_buscaminas.php',param,function(data){
+
+				location.href = "../../GameSocial";
+
+			});
+
+			
 
 		}else{
 
@@ -69,6 +87,7 @@ function btn_click(e){
 			if( ((txtCantCol.value * txtCantFilas.value) - txtCantMinas.value) == casillasDestapadas  ){
 				setTimeout(function(){alert(' ¡Ganaste!...Has descubierto todas las minas :D')}, 500);
 				marcarMinas();
+				location.href = "../../GameSocial";
 			}
 
 		}

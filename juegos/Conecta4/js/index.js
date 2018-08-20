@@ -2,6 +2,7 @@ var tablaJuego = document.getElementById('tablaJuego');
 var gridJuego = document.getElementById('gridJuego');
 var tablaBotones = document.getElementById('tablaBotones');
 var gridBotones = document.getElementById('gridBotones');
+var cont = document.getElementById('cont');
 
 var turno = document.getElementById('turno'); //Texto que esta en la parte inferior
 var circulo = document.getElementById('circulo'); //Representa el circulo que representa el color de la ficha de turno actual
@@ -18,46 +19,93 @@ var columnas = 7;
 function colocarFicha(e){
 
     var colBoton = parseInt(this.id.split('_')[1]); //Toma la columna del boton presionado
-    
+
     //For que recorre toda la fila en determinada columna, para poner la ficha en donde no haya ninguna y que tenga de limita el total de filas
     for(var i=filas-1; i >= 0; i--){
 
         //Compara si no hay una ficha en esa posicion, si no hay ninguna pone la ficha
         if( arrayTablero[i][colBoton].id != 'rojas' && arrayTablero[i][colBoton].id != 'amarillas'){
 
-            if(turno1){
+            //if(turno1){
                 arrayTablero[i][colBoton].style.backgroundColor = 'red'; //Cambia el color del fondo del boton de la ficha del tablero simulando que hay una ficha roja
                 circulo.style.color = 'yellow'; //El circulo que indica el turno cambia a amarillo porque es turno de las fichas amarillas
                 arrayTablero[i][colBoton].id = 'rojas';   //Al boton en esta posicion se le da el id del turno para que no se repita
                 turno.innerText = "Turno: "; //Cambia el texto a turno, debido a que la primera vez es 'empieza'
                 turno1 = false;
-            }else{
+            /*}else{
 
                 arrayTablero[i][colBoton].style.backgroundColor = 'yellow'; //Cambia el color del fondo del boton de la ficha del tablero simulando que hay una ficha amarilla
                 circulo.style.color = 'red';
                 arrayTablero[i][colBoton].id = 'amarillas';
                 turno.innerText = "Turno: ";
                 turno1 = true;
+            }*/
+
+            if( !verificarSiGano(arrayTablero[i][colBoton].id, i, colBoton ) ){
+                turnoPC();
             }
+
+            break;
+        }
+    }
+
+    
+}
+
+function turnoPC(){
+
+    //var colBoton = parseInt(this.id.split('_')[1]); //Toma la columna del boton presionado
+
+    var colBoton = Math.floor(Math.random() * (columnas - 0)) + 0;
+
+    //For que recorre toda la fila en determinada columna, para poner la ficha en donde no haya ninguna y que tenga de limita el total de filas
+    for(var i=filas-1; i >= 0; i--){
+
+        //Compara si no hay una ficha en esa posicion, si no hay ninguna pone la ficha
+        if( arrayTablero[i][colBoton].id != 'rojas' && arrayTablero[i][colBoton].id != 'amarillas'){
+
+            /*if(turno1){
+                arrayTablero[i][colBoton].style.backgroundColor = 'red'; //Cambia el color del fondo del boton de la ficha del tablero simulando que hay una ficha roja
+                circulo.style.color = 'yellow'; //El circulo que indica el turno cambia a amarillo porque es turno de las fichas amarillas
+                arrayTablero[i][colBoton].id = 'rojas';   //Al boton en esta posicion se le da el id del turno para que no se repita
+                turno.innerText = "Turno: "; //Cambia el texto a turno, debido a que la primera vez es 'empieza'
+                turno1 = false;
+            }else{*/
+
+                arrayTablero[i][colBoton].style.backgroundColor = 'yellow'; //Cambia el color del fondo del boton de la ficha del tablero simulando que hay una ficha amarilla
+                circulo.style.color = 'red';
+                arrayTablero[i][colBoton].id = 'amarillas';
+                turno.innerText = "Turno: ";
+                turno1 = true;
+            //}
 
             verificarSiGano(arrayTablero[i][colBoton].id, i, colBoton );
 
             break;
         }
     }
+
 }
 
 //Funcion que se despliega al terminar el juego, cuando ya hay un ganador
 //deshabilita los botones accionadores y ademas pregunta si se quiere jugar de nuevo
-function terminarJuego(){
+function terminarJuego(turno){
 
-    for(var i=0; i < columnas; i++){
+    /*for(var i=0; i < columnas; i++){
         arrayBotones[i].disabled = true;
+    }*/
+
+    if(turno == 'rojas'){
+        alert('Felicidades le has ganado a la computadora');
+        alert('Has obtenido 100 puntos');
+    }else{
+        alert('La computadora te ha ganado');
+        alert('Has obtenido 10 puntos');
     }
 
-    if(confirm('¿Quieres jugar otra vez?')){
-        location.reload();
-    }
+    location.href = "../../GameSocial";
+    
+    
 }
 
 //Funcion que verifica si hay un ganador, se manda llamar cada que se coloca una ficha
@@ -72,9 +120,9 @@ function verificarSiGano(turno, fila, columna){
             vecesFichaHorizontal++;
             if(vecesFichaHorizontal == 4){
 
-                alert('Han ganado las fichas ' + turno);
-                terminarJuego();
-                return;
+                //alert('Han ganado las fichas ' + turno);
+                terminarJuego(turno);
+                return true;
             } 
         }else{
             vecesFichaHorizontal = 0;
@@ -86,9 +134,9 @@ function verificarSiGano(turno, fila, columna){
         if(arrayTablero[i][columna].id == turno ){
             vecesFichaVertical++;
             if(vecesFichaVertical == 4){
-                alert('Han ganado las fichas ' + turno);
-                terminarJuego();
-                return;
+                //alert('Han ganado las fichas ' + turno);
+                terminarJuego(turno);
+                return true;
             } 
         }else{
             vecesFichaVertical = 0;
@@ -103,7 +151,7 @@ function verificarSiGano(turno, fila, columna){
             && (arrayTablero[i][c].id == arrayTablero[i - 3][c + 3].id) ){
                 alert("Han ganado las fichas " + turno);
                 terminarJuego();
-                return;
+                return true;
             }
         }
     }
@@ -116,10 +164,12 @@ function verificarSiGano(turno, fila, columna){
             && (arrayTablero[i][j].id == arrayTablero[i + 3][j + 3].id)){
                 alert("Han ganado las fichas " + turno);
                 terminarJuego();
-                return;
+                return true;
             }
         }
     }
+
+    return false;
 
 }
 
@@ -157,6 +207,8 @@ function crearTablero(){
 
         //y al final cada td al cuerpo de la tabla del tablero
         gridJuego.appendChild(tr);
+
+        tablaJuego.appendChild(gridJuego);
 
         //y la fila de los botones en una arreglo de todos los botones que representan las casillas
         arrayTablero.push(filaBotones);
