@@ -10,7 +10,12 @@
     $apellidos = filter_input(INPUT_POST, 'apellidos');
     $correo = filter_input(INPUT_POST, 'correo');
     $usuario = filter_input(INPUT_POST, 'usuario');
+    //$contrasena = filter_input(INPUT_POST, 'contrasena');
+
     $contrasena = filter_input(INPUT_POST, 'contrasena');
+
+    $contrasena = hash('sha256', $contrasena);
+
     $pp = 'defecto.png';
 
 

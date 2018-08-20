@@ -63,7 +63,7 @@
                     ?>
                     
                     <a href="configuracion.php"> <i class="fas fa-cogs"></i> Configuracion</a>
-                    <a href="login.html"> <i class="fas fa-sign-out-alt"></i> Salir</a>
+                    <a href="cerrar_sesion.php"> <i class="fas fa-sign-out-alt"></i> Salir</a>
                 </div>
 
             </nav>

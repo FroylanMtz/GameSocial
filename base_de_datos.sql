@@ -8,7 +8,7 @@ create table usuarios(
     nombre varchar(50) not null,
     apellidos varchar(100) not null,
     username varchar(50) not null,
-    password varchar(50) not null,
+    password varchar(100) not null,
     correo varchar(50) not null,
     edad int not null,
     foto varchar(50),

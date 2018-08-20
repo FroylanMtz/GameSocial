@@ -55,7 +55,7 @@
                     <a href="index.php"> <i class="fas fa-home"></i> Inicio</a>
                     <a href="cuenta.php?usuario=<?= $_SESSION['usuario_username']?>" > <i class="fas fa-user"></i> <?php echo $_SESSION['usuario_username'] ?> </a>
                     <a class="active"  href="configuracion.php"> <i class="fas fa-cogs"></i> Configuracion</a>
-                    <a href="login.html"> <i class="fas fa-sign-out-alt"></i> Salir</a>
+                    <a href="cerrar_sesion.php"> <i class="fas fa-sign-out-alt"></i> Salir</a>
                 </div>
 
             </nav>

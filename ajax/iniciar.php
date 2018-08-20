@@ -11,7 +11,10 @@
     $jsonResp = array( 'error' => false, 'mensaje' => '');
 
     $usuario = filter_input(INPUT_POST, 'usuario');
+    
     $contrasena = filter_input(INPUT_POST, 'contrasena');
+
+    $contrasena = hash('sha256', $contrasena);
 
 
     // Validación del usuario
@@ -23,7 +26,7 @@
 
     if ($r) {
         
-        if ($r['password'] === $contrasena) {
+        if ($r['password'] == $contrasena ) {
             session_start();
             $_SESSION['usuario_id'] = (int)$r['id'];
             $_SESSION['usuario_nombre'] = $r['nombre'];
@@ -39,7 +42,7 @@
 
         }else{
             $jsonResp['error'] = true;
-            $jsonResp['mensaje'] = 'Contrasena Incorrecta';
+            $jsonResp['mensaje'] = 'Contraseña incorrecta';
 
         }
 

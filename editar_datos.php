@@ -13,6 +13,9 @@
     $contrasenaActual = filter_input(INPUT_POST, 'contrasenaA');
     $contrasenaNueva = filter_input(INPUT_POST, 'contrasenaN');
 
+    $contrasenaActual = hash('sha256', $contrasenaActual);
+    $contrasenaNueva = hash('sha256', $contrasenaNueva);
+
 
     echo "<script> console.log('". $nombre ."') </script>";
 
