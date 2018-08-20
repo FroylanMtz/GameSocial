@@ -13,7 +13,7 @@ $stmt->execute();
 $datosUsuario = $stmt->fetch(PDO::FETCH_ASSOC);
 $idUsuario = (int)$datosUsuario['id'];
 
-$stmt = $db->prepare('SELECT * FROM puntajes WHERE id_usuario = :idUsuario');
+$stmt = $db->prepare('SELECT * FROM puntajes WHERE id_usuario = :idUsuario ORDER BY id DESC ');
 $stmt->bindParam(':idUsuario', $idUsuario );
 $stmt->execute();
 
@@ -43,8 +43,25 @@ $juegos = $db->prepare('SELECT * FROM juegos WHERE id = :id');
                             echo '<div class="col-md-6">';
                                 echo '<div class="card">';
                                     echo '<div class="card-header">';
-                                        echo ' <img id="pp" style="width:70px; height:70px;" src="files/pps/' . $datosUsuario['foto'] .' "> ';
-                                        echo '<h6> '. $datosUsuario['username'] .' ha jugado el juego de ' . $datosJuegos['nombre'] . ' y ha conseguido una puntuacion de '. $puntajes['marcador'] .' Puntos </h6>';  
+
+                                    if($datosJuegos['nombre'] == 'Ahorcado'){
+                                        echo ' <img id="pp" style="width:70px; height:70px; border-radius: 80px;" src="img/rope.png" > ';
+                                    }
+
+                                    if($datosJuegos['nombre'] == 'Buscaminas'){
+                                        echo ' <img id="pp" style="width:70px; height:70px; border-radius: 80px;" src="img/bomb.png" > ';
+                                    }
+
+                                    if($datosJuegos['nombre'] == 'Conecta4'){
+                                        echo ' <img id="pp" style="width:70px; height:70px; border-radius: 80px;" src="img/connect4.png" > ';
+                                    }
+
+                                    if($datosJuegos['nombre'] == 'TicTacToe'){
+                                        echo ' <img id="pp" style="width:70px; height:70px; border-radius: 80px;" src="img/tictactoe.png" > ';
+                                    }
+                                    
+
+                                        echo '<h5> '. $datosUsuario['username'] .' ha jugado el juego de ' . $datosJuegos['nombre'] . ' y ha conseguido una puntuacion de '. $puntajes['marcador'] .' Puntos </h5>';  
                                     echo '</div>';
                                 echo '</div>';
                             echo '</div>';

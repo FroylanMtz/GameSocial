@@ -91,7 +91,7 @@
                                 if(!$loSigo){
                                     echo '<a class="btn btn-primary" href="seguir_usuario.php?usuario='.$_SESSION['usuario_actual'].'">  <i class="fas fa-map"></i> Seguir </a>';
                                 }else{
-                                    echo '<a class="btn btn-danger" href="#">  <i class="fas fa-times"></i> Dejar de seguir </a>';
+                                    echo '<a class="btn btn-danger" href="dejarSeguir_usuario.php?usuario='.$_SESSION['usuario_actual'].'">  <i class="fas fa-times"></i> Dejar de seguir </a>';
                                 }
 
                             }

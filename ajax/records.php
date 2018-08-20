@@ -47,15 +47,30 @@ $stmt->bindParam(':idUsuario', $idUsuario);
                             echo '<div class="col-md-6">';
                                 echo '<div class="card">';
                                     echo '<div class="card-header">';
+                                    
+                                    if($datosJuegos['nombre'] == 'Ahorcado'){
+                                        echo ' <img id="pp" style="width:70px; height:70px; border-radius: 80px;" src="img/rope.png" > ';
+                                    }
 
+                                    if($datosJuegos['nombre'] == 'Buscaminas'){
+                                        echo ' <img id="pp" style="width:70px; height:70px; border-radius: 80px;" src="img/bomb.png" > ';
+                                    }
 
-                                        if($puntaje){
-                                            echo ' <img id="pp" style="width:70px; height:70px;" src="files/pps/' . $datosUsuario['foto'] .' "> ';
-                                            echo '<h6> El puntaje mas alto de '. $datosUsuario['username'] .' en el juego '. $datosJuegos['nombre'] .' es de '. $puntaje['marcador'] .' Puntos </h6>';
-                                        }else{
-                                            echo ' <img id="pp" style="width:70px; height:70px;" src="files/pps/' . $datosUsuario['foto'] .' "> ';
-                                            echo '<h6> '. $datosUsuario['username'] .' aun no ha jugado el juego '. $datosJuegos['nombre'] . ' </h6>';
-                                        }
+                                    if($datosJuegos['nombre'] == 'Conecta4'){
+                                        echo ' <img id="pp" style="width:70px; height:70px; border-radius: 80px;" src="img/connect4.png" > ';
+                                    }
+
+                                    if($datosJuegos['nombre'] == 'TicTacToe'){
+                                        echo ' <img id="pp" style="width:70px; height:70px; border-radius: 80px;" src="img/tictactoe.png" > ';
+                                    }
+                                    
+
+                                    if($puntaje['marcador'] == ""){
+                                        echo '<h5> '. $datosUsuario['username'] .' aun no ha jugado el juego '. $datosJuegos['nombre'] . ' </h5>';
+                                    }else{
+                                        echo '<h5> El puntaje mas alto de '. $datosUsuario['username'] .' en el juego '. $datosJuegos['nombre'] .' es de '. $puntaje['marcador'] .' Puntos </h5>';
+                                    }
+
                                           
                                     echo '</div>';
                                 echo '</div>';

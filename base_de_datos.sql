@@ -72,3 +72,9 @@ create table seguimiento(
     
 
 );
+
+
+INSERT INTO `juegos`(`id`, `nombre`, `descripcion`, `genero`) VALUES (1,'Ahorcado','Adivina la palabra','Puzzle');
+INSERT INTO `juegos`(`id`, `nombre`, `descripcion`, `genero`) VALUES (2,'Buscaminas','Encuentra las bombas','Estrategia');
+INSERT INTO `juegos`(`id`, `nombre`, `descripcion`, `genero`) VALUES (3,'Conecta4','Junta 4 en raya','Puzzle');
+INSERT INTO `juegos`(`id`, `nombre`, `descripcion`, `genero`) VALUES (4,'TicTacToe','Junta 3 en raya','Estrategia');
